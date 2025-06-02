@@ -12,11 +12,25 @@
     </style>
   </head>
   <body>
+    <script>
+      window.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("bgMusic");
+        document.body.addEventListener(
+          "click",
+          () => {
+            audio.muted = false;
+            audio.play();
+          },
+          { once: true }
+        );
+      });
+    </script>
     <audio
       id="bgMusic"
       src="audio/dung-lam-trai-tim-anh-dau.mp3"
       loop
       autoplay
+      muted
     ></audio>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
